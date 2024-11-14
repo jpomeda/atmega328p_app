@@ -11,7 +11,7 @@ build/default/production/apptasks.o.d build/default/production/apptasks.o: \
  Source/include/portable.h Source/include/deprecated_definitions.h \
  Source/portable/GCC/ATMega328/portmacro.h Source/include/mpu_wrappers.h \
  Source/include/task.h Source/include/list.h Drivers/pins.h \
- Drivers/uart.h
+ Drivers/uart.h Drivers/tc0.h /usr/lib/gcc/avr/7.3.0/include/stdbool.h
 
 Source/include/FreeRTOS.h:
 
@@ -58,3 +58,7 @@ Source/include/list.h:
 Drivers/pins.h:
 
 Drivers/uart.h:
+
+Drivers/tc0.h:
+
+/usr/lib/gcc/avr/7.3.0/include/stdbool.h:

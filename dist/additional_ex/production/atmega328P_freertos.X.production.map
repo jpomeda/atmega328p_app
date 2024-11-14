@@ -5,7 +5,7 @@ Se incluyó el miembro del archivo para satisfacer referencia por fichero (símb
 /usr/lib/gcc/avr/7.3.0/avr5/libgcc.a(_copy_data.o)
                               build/additional_ex/production/Drivers/uart.o (__do_copy_data)
 /usr/lib/gcc/avr/7.3.0/avr5/libgcc.a(_clear_bss.o)
-                              build/additional_ex/production/Source/portable/MemMang/heap_1.o (__do_clear_bss)
+                              build/additional_ex/production/Drivers/tc0.o (__do_clear_bss)
 /usr/lib/gcc/avr/7.3.0/../../../avr/lib/avr5/libc.a(memcpy.o)
                               build/additional_ex/production/Source/queue.o (memcpy)
 
@@ -16,11 +16,40 @@ Secciones de salida descartadas
  .text          0x0000000000000000        0x0 build/additional_ex/production/Drivers/uart.o
  .data          0x0000000000000000        0x0 build/additional_ex/production/Drivers/uart.o
  .bss           0x0000000000000000        0x0 build/additional_ex/production/Drivers/uart.o
- .data.message1
-                0x0000000000000000        0x2 build/additional_ex/production/Drivers/uart.o
  .text          0x0000000000000000        0x0 build/additional_ex/production/Drivers/pins.o
  .data          0x0000000000000000        0x0 build/additional_ex/production/Drivers/pins.o
  .bss           0x0000000000000000        0x0 build/additional_ex/production/Drivers/pins.o
+ .text.vPINToggle
+                0x0000000000000000        0xa build/additional_ex/production/Drivers/pins.o
+ .text          0x0000000000000000        0x0 build/additional_ex/production/Drivers/tc0.o
+ .data          0x0000000000000000        0x0 build/additional_ex/production/Drivers/tc0.o
+ .bss           0x0000000000000000        0x0 build/additional_ex/production/Drivers/tc0.o
+ .text.getTc0Count
+                0x0000000000000000        0xa build/additional_ex/production/Drivers/tc0.o
+ .text.resetTc0Count
+                0x0000000000000000        0xa build/additional_ex/production/Drivers/tc0.o
+ .text.TC0_Get_Overflow_InterruptFlagStatus
+                0x0000000000000000        0x6 build/additional_ex/production/Drivers/tc0.o
+ .text.TC0_Get_CompareA_InterruptFlagStatus
+                0x0000000000000000        0x6 build/additional_ex/production/Drivers/tc0.o
+ .text.TC0_Get_CompareB_InterruptFlagStatus
+                0x0000000000000000        0x8 build/additional_ex/production/Drivers/tc0.o
+ .text.TC0_Enable_Overflow_Interrupt
+                0x0000000000000000        0xc build/additional_ex/production/Drivers/tc0.o
+ .text.TC0_Disable_Overflow_Interrupt
+                0x0000000000000000        0xc build/additional_ex/production/Drivers/tc0.o
+ .text.TC0_Enable_CompareA_Interrupt
+                0x0000000000000000        0xc build/additional_ex/production/Drivers/tc0.o
+ .text.TC0_Disable_CompareA_Interrupt
+                0x0000000000000000        0xc build/additional_ex/production/Drivers/tc0.o
+ .text.TC0_Enable_CompareB_Interrupt
+                0x0000000000000000        0xc build/additional_ex/production/Drivers/tc0.o
+ .text.TC0_Disable_CompareB_Interrupt
+                0x0000000000000000        0xc build/additional_ex/production/Drivers/tc0.o
+ .text.TC0_WriteTimer
+                0x0000000000000000        0x4 build/additional_ex/production/Drivers/tc0.o
+ .text.TC0_ReadTimer
+                0x0000000000000000        0x4 build/additional_ex/production/Drivers/tc0.o
  .text          0x0000000000000000        0x0 build/additional_ex/production/Source/portable/GCC/ATMega328/port.o
  .data          0x0000000000000000        0x0 build/additional_ex/production/Source/portable/GCC/ATMega328/port.o
  .bss           0x0000000000000000        0x0 build/additional_ex/production/Source/portable/GCC/ATMega328/port.o
@@ -178,6 +207,8 @@ Secciones de salida descartadas
  .text          0x0000000000000000        0x0 build/additional_ex/production/apptasks.o
  .data          0x0000000000000000        0x0 build/additional_ex/production/apptasks.o
  .bss           0x0000000000000000        0x0 build/additional_ex/production/apptasks.o
+ .text.vPINToggleTask
+                0x0000000000000000       0x16 build/additional_ex/production/apptasks.o
  .rodata.xDelay1s
                 0x0000000000000000        0x2 build/additional_ex/production/apptasks.o
  .rodata.xDelay500ms
@@ -264,6 +295,7 @@ La dirección de la sección .data se estableció a 0x800100
 LOAD /opt/microchip/mplabx/v6.20/packs/Microchip/ATmega_DFP/3.1.264/gcc/dev/atmega328p/avr5/crtatmega328p.o
 LOAD build/additional_ex/production/Drivers/uart.o
 LOAD build/additional_ex/production/Drivers/pins.o
+LOAD build/additional_ex/production/Drivers/tc0.o
 LOAD build/additional_ex/production/Source/portable/GCC/ATMega328/port.o
 LOAD build/additional_ex/production/Source/portable/MemMang/heap_1.o
 LOAD build/additional_ex/production/Source/croutine.o
@@ -385,7 +417,7 @@ END GROUP
 .rela.plt
  *(.rela.plt)
 
-.text           0x0000000000000000      0xd3c
+.text           0x0000000000000000      0xdb4
  *(.vectors)
  .vectors       0x0000000000000000       0x68 /opt/microchip/mplabx/v6.20/packs/Microchip/ATmega_DFP/3.1.264/gcc/dev/atmega328p/avr5/crtatmega328p.o
                 0x0000000000000000                __vectors
@@ -462,11 +494,8 @@ END GROUP
                 0x00000000000000a2                __vector_9
                 0x00000000000000a2                __vector_2
                 0x00000000000000a2                __vector_21
-                0x00000000000000a2                __vector_15
                 0x00000000000000a2                __vector_8
-                0x00000000000000a2                __vector_14
                 0x00000000000000a2                __vector_10
-                0x00000000000000a2                __vector_16
                 0x00000000000000a2                __vector_18
                 0x00000000000000a2                __vector_20
                 0x00000000000000a6                . = ALIGN (0x2)
@@ -486,90 +515,96 @@ END GROUP
  .text.vPINInit
                 0x0000000000000104        0x4 build/additional_ex/production/Drivers/pins.o
                 0x0000000000000104                vPINInit
- .text.vPINToggle
-                0x0000000000000108        0xa build/additional_ex/production/Drivers/pins.o
-                0x0000000000000108                vPINToggle
+ .text.TC0_Initialize
+                0x0000000000000108       0x22 build/additional_ex/production/Drivers/tc0.o
+                0x0000000000000108                TC0_Initialize
+ .text.__vector_14
+                0x000000000000012a       0x56 build/additional_ex/production/Drivers/tc0.o
+                0x000000000000012a                __vector_14
+ .text.__vector_15
+                0x0000000000000180       0x1c build/additional_ex/production/Drivers/tc0.o
+                0x0000000000000180                __vector_15
+ .text.__vector_16
+                0x000000000000019c       0x16 build/additional_ex/production/Drivers/tc0.o
+                0x000000000000019c                __vector_16
  .text.pxPortInitialiseStack
-                0x0000000000000112       0xd8 build/additional_ex/production/Source/portable/GCC/ATMega328/port.o
-                0x0000000000000112                pxPortInitialiseStack
+                0x00000000000001b2       0xd8 build/additional_ex/production/Source/portable/GCC/ATMega328/port.o
+                0x00000000000001b2                pxPortInitialiseStack
  .text.xPortStartScheduler
-                0x00000000000001ea       0x80 build/additional_ex/production/Source/portable/GCC/ATMega328/port.o
-                0x00000000000001ea                xPortStartScheduler
+                0x000000000000028a       0x80 build/additional_ex/production/Source/portable/GCC/ATMega328/port.o
+                0x000000000000028a                xPortStartScheduler
  .text.vPortYield
-                0x000000000000026a       0xb2 build/additional_ex/production/Source/portable/GCC/ATMega328/port.o
-                0x000000000000026a                vPortYield
+                0x000000000000030a       0xb2 build/additional_ex/production/Source/portable/GCC/ATMega328/port.o
+                0x000000000000030a                vPortYield
  .text.vPortYieldFromTick
-                0x000000000000031c       0xb8 build/additional_ex/production/Source/portable/GCC/ATMega328/port.o
-                0x000000000000031c                vPortYieldFromTick
+                0x00000000000003bc       0xb8 build/additional_ex/production/Source/portable/GCC/ATMega328/port.o
+                0x00000000000003bc                vPortYieldFromTick
  .text.__vector_11
-                0x00000000000003d4        0x6 build/additional_ex/production/Source/portable/GCC/ATMega328/port.o
-                0x00000000000003d4                __vector_11
+                0x0000000000000474        0x6 build/additional_ex/production/Source/portable/GCC/ATMega328/port.o
+                0x0000000000000474                __vector_11
  .text.pvPortMalloc
-                0x00000000000003da       0x6c build/additional_ex/production/Source/portable/MemMang/heap_1.o
-                0x00000000000003da                pvPortMalloc
+                0x000000000000047a       0x6c build/additional_ex/production/Source/portable/MemMang/heap_1.o
+                0x000000000000047a                pvPortMalloc
  .text.vPortFree
-                0x0000000000000446        0x2 build/additional_ex/production/Source/portable/MemMang/heap_1.o
-                0x0000000000000446                vPortFree
+                0x00000000000004e6        0x2 build/additional_ex/production/Source/portable/MemMang/heap_1.o
+                0x00000000000004e6                vPortFree
  .text.vListInitialise
-                0x0000000000000448       0x1c build/additional_ex/production/Source/list.o
-                0x0000000000000448                vListInitialise
+                0x00000000000004e8       0x1c build/additional_ex/production/Source/list.o
+                0x00000000000004e8                vListInitialise
  .text.vListInitialiseItem
-                0x0000000000000464        0x8 build/additional_ex/production/Source/list.o
-                0x0000000000000464                vListInitialiseItem
+                0x0000000000000504        0x8 build/additional_ex/production/Source/list.o
+                0x0000000000000504                vListInitialiseItem
  .text.vListInsertEnd
-                0x000000000000046c       0x40 build/additional_ex/production/Source/list.o
-                0x000000000000046c                vListInsertEnd
+                0x000000000000050c       0x40 build/additional_ex/production/Source/list.o
+                0x000000000000050c                vListInsertEnd
  .text.vListInsert
-                0x00000000000004ac       0x5e build/additional_ex/production/Source/list.o
-                0x00000000000004ac                vListInsert
+                0x000000000000054c       0x5e build/additional_ex/production/Source/list.o
+                0x000000000000054c                vListInsert
  .text.uxListRemove
-                0x000000000000050a       0x4e build/additional_ex/production/Source/list.o
-                0x000000000000050a                uxListRemove
+                0x00000000000005aa       0x4e build/additional_ex/production/Source/list.o
+                0x00000000000005aa                uxListRemove
  .text.prvResetNextTaskUnblockTime
-                0x0000000000000558       0x3e build/additional_ex/production/Source/tasks.o
+                0x00000000000005f8       0x3e build/additional_ex/production/Source/tasks.o
  .text.prvAddCurrentTaskToDelayedList
-                0x0000000000000596       0x6e build/additional_ex/production/Source/tasks.o
+                0x0000000000000636       0x6e build/additional_ex/production/Source/tasks.o
  .text.xTaskGenericCreate
-                0x0000000000000604      0x210 build/additional_ex/production/Source/tasks.o
-                0x0000000000000604                xTaskGenericCreate
+                0x00000000000006a4      0x210 build/additional_ex/production/Source/tasks.o
+                0x00000000000006a4                xTaskGenericCreate
  .text.vTaskStartScheduler
-                0x0000000000000814       0x58 build/additional_ex/production/Source/tasks.o
-                0x0000000000000814                vTaskStartScheduler
+                0x00000000000008b4       0x58 build/additional_ex/production/Source/tasks.o
+                0x00000000000008b4                vTaskStartScheduler
  .text.vTaskSuspendAll
-                0x000000000000086c        0xc build/additional_ex/production/Source/tasks.o
-                0x000000000000086c                vTaskSuspendAll
+                0x000000000000090c        0xc build/additional_ex/production/Source/tasks.o
+                0x000000000000090c                vTaskSuspendAll
  .text.xTaskIncrementTick
-                0x0000000000000878      0x180 build/additional_ex/production/Source/tasks.o
-                0x0000000000000878                xTaskIncrementTick
+                0x0000000000000918      0x180 build/additional_ex/production/Source/tasks.o
+                0x0000000000000918                xTaskIncrementTick
  .text.xTaskResumeAll
-                0x00000000000009f8      0x10c build/additional_ex/production/Source/tasks.o
-                0x00000000000009f8                xTaskResumeAll
+                0x0000000000000a98      0x10c build/additional_ex/production/Source/tasks.o
+                0x0000000000000a98                xTaskResumeAll
  .text.vTaskDelay
-                0x0000000000000b04       0x40 build/additional_ex/production/Source/tasks.o
-                0x0000000000000b04                vTaskDelay
+                0x0000000000000ba4       0x40 build/additional_ex/production/Source/tasks.o
+                0x0000000000000ba4                vTaskDelay
  .text.prvIdleTask
-                0x0000000000000b44       0x7e build/additional_ex/production/Source/tasks.o
+                0x0000000000000be4       0x7e build/additional_ex/production/Source/tasks.o
  .text.vTaskSwitchContext
-                0x0000000000000bc2       0xda build/additional_ex/production/Source/tasks.o
-                0x0000000000000bc2                vTaskSwitchContext
- .text.vPINToggleTask
-                0x0000000000000c9c       0x16 build/additional_ex/production/apptasks.o
-                0x0000000000000c9c                vPINToggleTask
+                0x0000000000000c62       0xda build/additional_ex/production/Source/tasks.o
+                0x0000000000000c62                vTaskSwitchContext
  .text.vUARTTXHelloWorldTask
-                0x0000000000000cb2        0xe build/additional_ex/production/apptasks.o
-                0x0000000000000cb2                vUARTTXHelloWorldTask
- .text.main     0x0000000000000cc0       0x62 build/additional_ex/production/main.o
-                0x0000000000000cc0                main
+                0x0000000000000d3c        0xe build/additional_ex/production/apptasks.o
+                0x0000000000000d3c                vUARTTXHelloWorldTask
+ .text.main     0x0000000000000d4a       0x4c build/additional_ex/production/main.o
+                0x0000000000000d4a                main
  .text.vApplicationIdleHook
-                0x0000000000000d22        0x2 build/additional_ex/production/main.o
-                0x0000000000000d22                vApplicationIdleHook
- .text.init     0x0000000000000d24       0x14 build/additional_ex/production/Drivers/system.o
-                0x0000000000000d24                init
-                0x0000000000000d38                . = ALIGN (0x2)
+                0x0000000000000d96        0x2 build/additional_ex/production/main.o
+                0x0000000000000d96                vApplicationIdleHook
+ .text.init     0x0000000000000d98       0x18 build/additional_ex/production/Drivers/system.o
+                0x0000000000000d98                init
+                0x0000000000000db0                . = ALIGN (0x2)
  *(.fini9)
- .fini9         0x0000000000000d38        0x0 /usr/lib/gcc/avr/7.3.0/avr5/libgcc.a(_exit.o)
-                0x0000000000000d38                exit
-                0x0000000000000d38                _exit
+ .fini9         0x0000000000000db0        0x0 /usr/lib/gcc/avr/7.3.0/avr5/libgcc.a(_exit.o)
+                0x0000000000000db0                exit
+                0x0000000000000db0                _exit
  *(.fini9)
  *(.fini8)
  *(.fini8)
@@ -588,89 +623,91 @@ END GROUP
  *(.fini1)
  *(.fini1)
  *(.fini0)
- .fini0         0x0000000000000d38        0x4 /usr/lib/gcc/avr/7.3.0/avr5/libgcc.a(_exit.o)
+ .fini0         0x0000000000000db0        0x4 /usr/lib/gcc/avr/7.3.0/avr5/libgcc.a(_exit.o)
  *(.fini0)
-                0x0000000000000d3c                _etext = .
+                0x0000000000000db4                _etext = .
 
-.data           0x0000000000800100       0x3a dirección de carga 0x0000000000000d3c
+.data           0x0000000000800100       0x20 dirección de carga 0x0000000000000db4
                 0x0000000000800100                PROVIDE (__data_start, .)
  *(.data)
  *(.data*)
- .data.message2
+ .data.message1
                 0x0000000000800100        0x2 build/additional_ex/production/Drivers/uart.o
-                0x0000000000800100                message2
+                0x0000000000800100                message1
  .data.xNextTaskUnblockTime
                 0x0000000000800102        0x2 build/additional_ex/production/Source/tasks.o
  *(.gnu.linkonce.d*)
  *(.rodata)
  *(.rodata*)
  .rodata.str1.1
-                0x0000000000800104       0x20 build/additional_ex/production/Drivers/uart.o
+                0x0000000000800104        0xc build/additional_ex/production/Drivers/uart.o
  .rodata.vTaskStartScheduler.str1.1
-                0x0000000000800124        0x5 build/additional_ex/production/Source/tasks.o
+                0x0000000000800110        0x5 build/additional_ex/production/Source/tasks.o
  .rodata.main.str1.1
-                0x0000000000800129       0x11 build/additional_ex/production/main.o
+                0x0000000000800115        0xa build/additional_ex/production/main.o
  *(.gnu.linkonce.r*)
-                0x000000000080013a                . = ALIGN (0x2)
-                0x000000000080013a                _edata = .
-                0x000000000080013a                PROVIDE (__data_end, .)
+                0x0000000000800120                . = ALIGN (0x2)
+ *fill*         0x000000000080011f        0x1 
+                0x0000000000800120                _edata = .
+                0x0000000000800120                PROVIDE (__data_end, .)
 
-.bss            0x000000000080013a      0x639
-                0x000000000080013a                PROVIDE (__bss_start, .)
+.bss            0x0000000000800120      0x63b
+                0x0000000000800120                PROVIDE (__bss_start, .)
  *(.bss)
  *(.bss*)
+ .bss.tc0_c     0x0000000000800120        0x2 build/additional_ex/production/Drivers/tc0.o
  .bss.pucAlignedHeap.1910
-                0x000000000080013a        0x2 build/additional_ex/production/Source/portable/MemMang/heap_1.o
+                0x0000000000800122        0x2 build/additional_ex/production/Source/portable/MemMang/heap_1.o
  .bss.xNextFreeByte
-                0x000000000080013c        0x2 build/additional_ex/production/Source/portable/MemMang/heap_1.o
- .bss.ucHeap    0x000000000080013e      0x5dc build/additional_ex/production/Source/portable/MemMang/heap_1.o
+                0x0000000000800124        0x2 build/additional_ex/production/Source/portable/MemMang/heap_1.o
+ .bss.ucHeap    0x0000000000800126      0x5dc build/additional_ex/production/Source/portable/MemMang/heap_1.o
  .bss.uxSchedulerSuspended
-                0x000000000080071a        0x1 build/additional_ex/production/Source/tasks.o
+                0x0000000000800702        0x1 build/additional_ex/production/Source/tasks.o
  .bss.uxTaskNumber
-                0x000000000080071b        0x1 build/additional_ex/production/Source/tasks.o
+                0x0000000000800703        0x1 build/additional_ex/production/Source/tasks.o
  .bss.xNumOfOverflows
-                0x000000000080071c        0x1 build/additional_ex/production/Source/tasks.o
+                0x0000000000800704        0x1 build/additional_ex/production/Source/tasks.o
  .bss.xYieldPending
-                0x000000000080071d        0x1 build/additional_ex/production/Source/tasks.o
+                0x0000000000800705        0x1 build/additional_ex/production/Source/tasks.o
  .bss.uxPendedTicks
-                0x000000000080071e        0x1 build/additional_ex/production/Source/tasks.o
+                0x0000000000800706        0x1 build/additional_ex/production/Source/tasks.o
  .bss.xSchedulerRunning
-                0x000000000080071f        0x1 build/additional_ex/production/Source/tasks.o
+                0x0000000000800707        0x1 build/additional_ex/production/Source/tasks.o
  .bss.uxTopReadyPriority
-                0x0000000000800720        0x1 build/additional_ex/production/Source/tasks.o
+                0x0000000000800708        0x1 build/additional_ex/production/Source/tasks.o
  .bss.xTickCount
-                0x0000000000800721        0x2 build/additional_ex/production/Source/tasks.o
+                0x0000000000800709        0x2 build/additional_ex/production/Source/tasks.o
  .bss.uxCurrentNumberOfTasks
-                0x0000000000800723        0x1 build/additional_ex/production/Source/tasks.o
+                0x000000000080070b        0x1 build/additional_ex/production/Source/tasks.o
  .bss.uxTasksDeleted
-                0x0000000000800724        0x1 build/additional_ex/production/Source/tasks.o
+                0x000000000080070c        0x1 build/additional_ex/production/Source/tasks.o
  .bss.xTasksWaitingTermination
-                0x0000000000800725        0x9 build/additional_ex/production/Source/tasks.o
+                0x000000000080070d        0x9 build/additional_ex/production/Source/tasks.o
  .bss.xPendingReadyList
-                0x000000000080072e        0x9 build/additional_ex/production/Source/tasks.o
+                0x0000000000800716        0x9 build/additional_ex/production/Source/tasks.o
  .bss.pxOverflowDelayedTaskList
-                0x0000000000800737        0x2 build/additional_ex/production/Source/tasks.o
+                0x000000000080071f        0x2 build/additional_ex/production/Source/tasks.o
  .bss.pxDelayedTaskList
-                0x0000000000800739        0x2 build/additional_ex/production/Source/tasks.o
+                0x0000000000800721        0x2 build/additional_ex/production/Source/tasks.o
  .bss.xDelayedTaskList2
-                0x000000000080073b        0x9 build/additional_ex/production/Source/tasks.o
+                0x0000000000800723        0x9 build/additional_ex/production/Source/tasks.o
  .bss.xDelayedTaskList1
-                0x0000000000800744        0x9 build/additional_ex/production/Source/tasks.o
+                0x000000000080072c        0x9 build/additional_ex/production/Source/tasks.o
  .bss.pxReadyTasksLists
-                0x000000000080074d       0x24 build/additional_ex/production/Source/tasks.o
+                0x0000000000800735       0x24 build/additional_ex/production/Source/tasks.o
  .bss.pxCurrentTCB
-                0x0000000000800771        0x2 build/additional_ex/production/Source/tasks.o
-                0x0000000000800771                pxCurrentTCB
+                0x0000000000800759        0x2 build/additional_ex/production/Source/tasks.o
+                0x0000000000800759                pxCurrentTCB
  *(COMMON)
-                0x0000000000800773                PROVIDE (__bss_end, .)
-                0x0000000000000d3c                __data_load_start = LOADADDR (.data)
-                0x0000000000000d76                __data_load_end = (__data_load_start + SIZEOF (.data))
+                0x000000000080075b                PROVIDE (__bss_end, .)
+                0x0000000000000db4                __data_load_start = LOADADDR (.data)
+                0x0000000000000dd4                __data_load_end = (__data_load_start + SIZEOF (.data))
 
-.noinit         0x0000000000800773        0x0
+.noinit         0x000000000080075b        0x0
                 [!provide]                        PROVIDE (__noinit_start, .)
  *(.noinit*)
                 [!provide]                        PROVIDE (__noinit_end, .)
-                0x0000000000800773                _end = .
+                0x000000000080075b                _end = .
                 [!provide]                        PROVIDE (__heap_start, .)
 
 .eeprom         0x0000000000810000        0x0
@@ -715,6 +752,7 @@ END GROUP
  .comment       0x0000000000000000       0x11 build/additional_ex/production/Drivers/uart.o
                                          0x12 (tamaño antes de la relajación)
  .comment       0x0000000000000011       0x12 build/additional_ex/production/Drivers/pins.o
+ .comment       0x0000000000000011       0x12 build/additional_ex/production/Drivers/tc0.o
  .comment       0x0000000000000011       0x12 build/additional_ex/production/Source/portable/GCC/ATMega328/port.o
  .comment       0x0000000000000011       0x12 build/additional_ex/production/Source/portable/MemMang/heap_1.o
  .comment       0x0000000000000011       0x12 build/additional_ex/production/Source/list.o

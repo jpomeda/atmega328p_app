@@ -6,7 +6,8 @@ build/default/production/Drivers/pins.o.d \
  /opt/microchip/mplabx/v6.20/packs/Microchip/ATmega_DFP/3.1.264/include/avr/iom328p.h \
  /usr/lib/avr/include/avr/portpins.h /usr/lib/avr/include/avr/common.h \
  /usr/lib/avr/include/avr/version.h /usr/lib/avr/include/avr/fuse.h \
- /usr/lib/avr/include/avr/lock.h Drivers/pins.h
+ /usr/lib/avr/include/avr/lock.h Drivers/pins.h Drivers/system.h \
+ /usr/lib/avr/include/avr/builtins.h /usr/lib/avr/include/avr/interrupt.h
 
 /usr/lib/avr/include/avr/io.h:
 
@@ -31,3 +32,9 @@ build/default/production/Drivers/pins.o.d \
 /usr/lib/avr/include/avr/lock.h:
 
 Drivers/pins.h:
+
+Drivers/system.h:
+
+/usr/lib/avr/include/avr/builtins.h:
+
+/usr/lib/avr/include/avr/interrupt.h:

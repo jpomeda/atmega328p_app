@@ -21,7 +21,10 @@ portSHORT main(void)
     
     init();
     
+// For default program we don't use the toggle pin task but the timer interruption
+#ifndef ENABLE_PA3
 	xTaskCreate(vPINToggleTask, (int8_t*) "PINPB4", configMINIMAL_STACK_SIZE, NULL, mainSQ_TASK_PRIORITY, NULL);
+#endif
     xTaskCreate(vUARTTXHelloWorldTask, (int8_t*) "UART_TASK", configMINIMAL_STACK_SIZE, NULL, mainUARTTX_TASK_PRIORITY, NULL);
     
 	vTaskStartScheduler();

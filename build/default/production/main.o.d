@@ -11,6 +11,7 @@ build/default/production/main.o.d build/default/production/main.o: main.c \
  Source/include/portable.h Source/include/deprecated_definitions.h \
  Source/portable/GCC/ATMega328/portmacro.h Source/include/mpu_wrappers.h \
  Source/include/task.h Source/include/list.h apptasks.h Drivers/system.h \
+ /usr/lib/avr/include/avr/builtins.h /usr/lib/avr/include/avr/interrupt.h \
  Drivers/uart.h Drivers/pins.h
 
 /usr/lib/avr/include/avr/io.h:
@@ -58,6 +59,10 @@ Source/include/list.h:
 apptasks.h:
 
 Drivers/system.h:
+
+/usr/lib/avr/include/avr/builtins.h:
+
+/usr/lib/avr/include/avr/interrupt.h:
 
 Drivers/uart.h:
 

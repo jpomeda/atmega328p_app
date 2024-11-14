@@ -51,17 +51,17 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
-SOURCEFILES_QUOTED_IF_SPACED=Drivers/uart.c Drivers/pins.c Source/portable/GCC/ATMega328/port.c Source/portable/MemMang/heap_1.c Source/croutine.c Source/event_groups.c Source/list.c Source/queue.c Source/tasks.c Source/timers.c apptasks.c main.c Drivers/system.c
+SOURCEFILES_QUOTED_IF_SPACED=Drivers/uart.c Drivers/pins.c Drivers/tc0.c Source/portable/GCC/ATMega328/port.c Source/portable/MemMang/heap_1.c Source/croutine.c Source/event_groups.c Source/list.c Source/queue.c Source/tasks.c Source/timers.c apptasks.c main.c Drivers/system.c
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/Drivers/uart.o ${OBJECTDIR}/Drivers/pins.o ${OBJECTDIR}/Source/portable/GCC/ATMega328/port.o ${OBJECTDIR}/Source/portable/MemMang/heap_1.o ${OBJECTDIR}/Source/croutine.o ${OBJECTDIR}/Source/event_groups.o ${OBJECTDIR}/Source/list.o ${OBJECTDIR}/Source/queue.o ${OBJECTDIR}/Source/tasks.o ${OBJECTDIR}/Source/timers.o ${OBJECTDIR}/apptasks.o ${OBJECTDIR}/main.o ${OBJECTDIR}/Drivers/system.o
-POSSIBLE_DEPFILES=${OBJECTDIR}/Drivers/uart.o.d ${OBJECTDIR}/Drivers/pins.o.d ${OBJECTDIR}/Source/portable/GCC/ATMega328/port.o.d ${OBJECTDIR}/Source/portable/MemMang/heap_1.o.d ${OBJECTDIR}/Source/croutine.o.d ${OBJECTDIR}/Source/event_groups.o.d ${OBJECTDIR}/Source/list.o.d ${OBJECTDIR}/Source/queue.o.d ${OBJECTDIR}/Source/tasks.o.d ${OBJECTDIR}/Source/timers.o.d ${OBJECTDIR}/apptasks.o.d ${OBJECTDIR}/main.o.d ${OBJECTDIR}/Drivers/system.o.d
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/Drivers/uart.o ${OBJECTDIR}/Drivers/pins.o ${OBJECTDIR}/Drivers/tc0.o ${OBJECTDIR}/Source/portable/GCC/ATMega328/port.o ${OBJECTDIR}/Source/portable/MemMang/heap_1.o ${OBJECTDIR}/Source/croutine.o ${OBJECTDIR}/Source/event_groups.o ${OBJECTDIR}/Source/list.o ${OBJECTDIR}/Source/queue.o ${OBJECTDIR}/Source/tasks.o ${OBJECTDIR}/Source/timers.o ${OBJECTDIR}/apptasks.o ${OBJECTDIR}/main.o ${OBJECTDIR}/Drivers/system.o
+POSSIBLE_DEPFILES=${OBJECTDIR}/Drivers/uart.o.d ${OBJECTDIR}/Drivers/pins.o.d ${OBJECTDIR}/Drivers/tc0.o.d ${OBJECTDIR}/Source/portable/GCC/ATMega328/port.o.d ${OBJECTDIR}/Source/portable/MemMang/heap_1.o.d ${OBJECTDIR}/Source/croutine.o.d ${OBJECTDIR}/Source/event_groups.o.d ${OBJECTDIR}/Source/list.o.d ${OBJECTDIR}/Source/queue.o.d ${OBJECTDIR}/Source/tasks.o.d ${OBJECTDIR}/Source/timers.o.d ${OBJECTDIR}/apptasks.o.d ${OBJECTDIR}/main.o.d ${OBJECTDIR}/Drivers/system.o.d
 
 # Object Files
-OBJECTFILES=${OBJECTDIR}/Drivers/uart.o ${OBJECTDIR}/Drivers/pins.o ${OBJECTDIR}/Source/portable/GCC/ATMega328/port.o ${OBJECTDIR}/Source/portable/MemMang/heap_1.o ${OBJECTDIR}/Source/croutine.o ${OBJECTDIR}/Source/event_groups.o ${OBJECTDIR}/Source/list.o ${OBJECTDIR}/Source/queue.o ${OBJECTDIR}/Source/tasks.o ${OBJECTDIR}/Source/timers.o ${OBJECTDIR}/apptasks.o ${OBJECTDIR}/main.o ${OBJECTDIR}/Drivers/system.o
+OBJECTFILES=${OBJECTDIR}/Drivers/uart.o ${OBJECTDIR}/Drivers/pins.o ${OBJECTDIR}/Drivers/tc0.o ${OBJECTDIR}/Source/portable/GCC/ATMega328/port.o ${OBJECTDIR}/Source/portable/MemMang/heap_1.o ${OBJECTDIR}/Source/croutine.o ${OBJECTDIR}/Source/event_groups.o ${OBJECTDIR}/Source/list.o ${OBJECTDIR}/Source/queue.o ${OBJECTDIR}/Source/tasks.o ${OBJECTDIR}/Source/timers.o ${OBJECTDIR}/apptasks.o ${OBJECTDIR}/main.o ${OBJECTDIR}/Drivers/system.o
 
 # Source Files
-SOURCEFILES=Drivers/uart.c Drivers/pins.c Source/portable/GCC/ATMega328/port.c Source/portable/MemMang/heap_1.c Source/croutine.c Source/event_groups.c Source/list.c Source/queue.c Source/tasks.c Source/timers.c apptasks.c main.c Drivers/system.c
+SOURCEFILES=Drivers/uart.c Drivers/pins.c Drivers/tc0.c Source/portable/GCC/ATMega328/port.c Source/portable/MemMang/heap_1.c Source/croutine.c Source/event_groups.c Source/list.c Source/queue.c Source/tasks.c Source/timers.c apptasks.c main.c Drivers/system.c
 
 # Pack Options 
 PACK_COMPILER_OPTIONS=-I "${DFP_DIR}/include"
@@ -115,6 +115,12 @@ ${OBJECTDIR}/Drivers/pins.o: Drivers/pins.c  .generated_files/flags/default/226a
 	@${RM} ${OBJECTDIR}/Drivers/pins.o.d 
 	@${RM} ${OBJECTDIR}/Drivers/pins.o 
 	 ${MP_CC}  $(MP_EXTRA_CC_PRE) -mmcu=atmega328p ${PACK_COMPILER_OPTIONS} ${PACK_COMMON_OPTIONS} -g -DDEBUG -D__MPLAB_DEBUGGER_SIMULATOR=1 -gdwarf-2  -x c -c -D__$(MP_PROCESSOR_OPTION)__  -I"Source/include" -I"Source/portable" -I"Source/portable/GCC" -I"Source/portable/MemMang" -I"Source/portable/GCC/ATMega328" -I"Drivers" -I"../../../../../../usr/lib/avr/include" -funsigned-char -funsigned-bitfields -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -Wall -MD -MP -MF "${OBJECTDIR}/Drivers/pins.o.d" -MT "${OBJECTDIR}/Drivers/pins.o.d" -MT ${OBJECTDIR}/Drivers/pins.o  -o ${OBJECTDIR}/Drivers/pins.o Drivers/pins.c  -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD) 
+	
+${OBJECTDIR}/Drivers/tc0.o: Drivers/tc0.c  .generated_files/flags/default/fef2c7a678084816f733a079383506a5f3540503 .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
+	@${MKDIR} "${OBJECTDIR}/Drivers" 
+	@${RM} ${OBJECTDIR}/Drivers/tc0.o.d 
+	@${RM} ${OBJECTDIR}/Drivers/tc0.o 
+	 ${MP_CC}  $(MP_EXTRA_CC_PRE) -mmcu=atmega328p ${PACK_COMPILER_OPTIONS} ${PACK_COMMON_OPTIONS} -g -DDEBUG -D__MPLAB_DEBUGGER_SIMULATOR=1 -gdwarf-2  -x c -c -D__$(MP_PROCESSOR_OPTION)__  -I"Source/include" -I"Source/portable" -I"Source/portable/GCC" -I"Source/portable/MemMang" -I"Source/portable/GCC/ATMega328" -I"Drivers" -I"../../../../../../usr/lib/avr/include" -funsigned-char -funsigned-bitfields -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -Wall -MD -MP -MF "${OBJECTDIR}/Drivers/tc0.o.d" -MT "${OBJECTDIR}/Drivers/tc0.o.d" -MT ${OBJECTDIR}/Drivers/tc0.o  -o ${OBJECTDIR}/Drivers/tc0.o Drivers/tc0.c  -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD) 
 	
 ${OBJECTDIR}/Source/portable/GCC/ATMega328/port.o: Source/portable/GCC/ATMega328/port.c  .generated_files/flags/default/a0a013da347f1e628ab0274b34b2c970dc424660 .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
 	@${MKDIR} "${OBJECTDIR}/Source/portable/GCC/ATMega328" 
@@ -194,6 +200,12 @@ ${OBJECTDIR}/Drivers/pins.o: Drivers/pins.c  .generated_files/flags/default/eb43
 	@${RM} ${OBJECTDIR}/Drivers/pins.o.d 
 	@${RM} ${OBJECTDIR}/Drivers/pins.o 
 	 ${MP_CC}  $(MP_EXTRA_CC_PRE) -mmcu=atmega328p ${PACK_COMPILER_OPTIONS} ${PACK_COMMON_OPTIONS}  -x c -c -D__$(MP_PROCESSOR_OPTION)__  -I"Source/include" -I"Source/portable" -I"Source/portable/GCC" -I"Source/portable/MemMang" -I"Source/portable/GCC/ATMega328" -I"Drivers" -I"../../../../../../usr/lib/avr/include" -funsigned-char -funsigned-bitfields -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -Wall -MD -MP -MF "${OBJECTDIR}/Drivers/pins.o.d" -MT "${OBJECTDIR}/Drivers/pins.o.d" -MT ${OBJECTDIR}/Drivers/pins.o  -o ${OBJECTDIR}/Drivers/pins.o Drivers/pins.c  -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD) 
+	
+${OBJECTDIR}/Drivers/tc0.o: Drivers/tc0.c  .generated_files/flags/default/715569a97fed6a4f67825c1dd30604fdbb62836c .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
+	@${MKDIR} "${OBJECTDIR}/Drivers" 
+	@${RM} ${OBJECTDIR}/Drivers/tc0.o.d 
+	@${RM} ${OBJECTDIR}/Drivers/tc0.o 
+	 ${MP_CC}  $(MP_EXTRA_CC_PRE) -mmcu=atmega328p ${PACK_COMPILER_OPTIONS} ${PACK_COMMON_OPTIONS}  -x c -c -D__$(MP_PROCESSOR_OPTION)__  -I"Source/include" -I"Source/portable" -I"Source/portable/GCC" -I"Source/portable/MemMang" -I"Source/portable/GCC/ATMega328" -I"Drivers" -I"../../../../../../usr/lib/avr/include" -funsigned-char -funsigned-bitfields -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -Wall -MD -MP -MF "${OBJECTDIR}/Drivers/tc0.o.d" -MT "${OBJECTDIR}/Drivers/tc0.o.d" -MT ${OBJECTDIR}/Drivers/tc0.o  -o ${OBJECTDIR}/Drivers/tc0.o Drivers/tc0.c  -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD) 
 	
 ${OBJECTDIR}/Source/portable/GCC/ATMega328/port.o: Source/portable/GCC/ATMega328/port.c  .generated_files/flags/default/c0a92b5b6bea6372c8a0c957d05f67abba79245 .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
 	@${MKDIR} "${OBJECTDIR}/Source/portable/GCC/ATMega328" 

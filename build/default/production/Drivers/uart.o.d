@@ -7,6 +7,7 @@ build/default/production/Drivers/uart.o.d \
  /usr/lib/avr/include/avr/portpins.h /usr/lib/avr/include/avr/common.h \
  /usr/lib/avr/include/avr/version.h /usr/lib/avr/include/avr/fuse.h \
  /usr/lib/avr/include/avr/lock.h Drivers/uart.h Drivers/system.h \
+ /usr/lib/avr/include/avr/builtins.h /usr/lib/avr/include/avr/interrupt.h \
  /usr/lib/avr/include/stdio.h /usr/lib/gcc/avr/7.3.0/include/stdarg.h \
  /usr/lib/gcc/avr/7.3.0/include/stddef.h
 
@@ -35,6 +36,10 @@ build/default/production/Drivers/uart.o.d \
 Drivers/uart.h:
 
 Drivers/system.h:
+
+/usr/lib/avr/include/avr/builtins.h:
+
+/usr/lib/avr/include/avr/interrupt.h:
 
 /usr/lib/avr/include/stdio.h:
 
