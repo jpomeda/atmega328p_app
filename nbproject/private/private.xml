@@ -6,14 +6,13 @@
             <file>file:/home/jpomeda/workspaces/MPLABX/atmega328P_freertos/atmega328P_freertos.X/main.c</file>
             <file>file:/home/jpomeda/workspaces/MPLABX/atmega328P_freertos/atmega328P_freertos.X/apptasks.c</file>
             <file>file:/home/jpomeda/workspaces/MPLABX/atmega328P_freertos/atmega328P_freertos.X/Source/tasks.c</file>
+            <file>file:/home/jpomeda/workspaces/MPLABX/atmega328P_freertos/atmega328P_freertos.X/Source/include/task.h</file>
             <file>file:/home/jpomeda/workspaces/MPLABX/atmega328P_freertos/atmega328P_freertos.X/Drivers/uart.c</file>
-            <file>file:/home/jpomeda/workspaces/MPLABX/atmega328P_freertos/atmega328P_freertos.X/Drivers/pins.h</file>
-            <file>file:/home/jpomeda/workspaces/MPLABX/atmega328P_freertos/atmega328P_freertos.X/Drivers/system.h</file>
+            <file>file:/home/jpomeda/workspaces/MPLABX/atmega328P_freertos/atmega328P_freertos.X/Drivers/tc0.c</file>
             <file>file:/home/jpomeda/workspaces/MPLABX/atmega328P_freertos/atmega328P_freertos.X/Drivers/system.c</file>
-            <file>file:/home/jpomeda/workspaces/MPLABX/atmega328P_freertos/atmega328P_freertos.X/Makefile</file>
-            <file>file:/home/jpomeda/workspaces/MPLABX/atmega328P_freertos/atmega328P_freertos.X/Drivers/pins.c</file>
             <file>file:/home/jpomeda/workspaces/MPLABX/atmega328P_freertos/atmega328P_freertos.X/Drivers/uart.h</file>
-            <file>file:/home/jpomeda/workspaces/MPLABX/atmega328P_freertos/atmega328P_freertos.X/apptasks.h</file>
+            <file>file:/home/jpomeda/workspaces/MPLABX/atmega328P_freertos/atmega328P_freertos.X/Drivers/pins.c</file>
+            <file>file:/home/jpomeda/workspaces/MPLABX/atmega328P_freertos/atmega328P_freertos.X/Drivers/tc0.h</file>
         </group>
     </open-files>
 </project-private>

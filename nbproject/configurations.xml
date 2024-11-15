@@ -271,7 +271,7 @@
         <property key="tracecontrol.tracefile" value="defmplabxtrace.log"/>
         <property key="tracecontrol.traceresetonrun" value="false"/>
         <property key="uart0io.output" value="window"/>
-        <property key="uart0io.outputfile" value=""/>
+        <property key="uart0io.outputfile" value="uart_out"/>
         <property key="uart0io.uartioenabled" value="false"/>
         <property key="uart1io.output" value="window"/>
         <property key="uart1io.outputfile" value=""/>
@@ -746,7 +746,7 @@
         <property key="tracecontrol.tracefile" value="defmplabxtrace.log"/>
         <property key="tracecontrol.traceresetonrun" value="false"/>
         <property key="uart0io.output" value="window"/>
-        <property key="uart0io.outputfile" value=""/>
+        <property key="uart0io.outputfile" value="uart_out"/>
         <property key="uart0io.uartioenabled" value="false"/>
         <property key="uart1io.output" value="window"/>
         <property key="uart1io.outputfile" value=""/>
