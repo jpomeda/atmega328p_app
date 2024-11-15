@@ -3,17 +3,24 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file:/home/jpomeda/workspaces/MPLABX/atmega328P_freertos/atmega328P_freertos.X/Source/include/FreeRTOSConfig.h</file>
+            <file>file:/home/jpomeda/workspaces/MPLABX/atmega328P_freertos/atmega328P_freertos.X/Source/portable/GCC/ATMega328/port.c</file>
             <file>file:/home/jpomeda/workspaces/MPLABX/atmega328P_freertos/atmega328P_freertos.X/main.c</file>
-            <file>file:/home/jpomeda/workspaces/MPLABX/atmega328P_freertos/atmega328P_freertos.X/apptasks.c</file>
             <file>file:/home/jpomeda/workspaces/MPLABX/atmega328P_freertos/atmega328P_freertos.X/Source/tasks.c</file>
+            <file>file:/home/jpomeda/workspaces/MPLABX/atmega328P_freertos/atmega328P_freertos.X/Source/include/projdefs.h</file>
             <file>file:/home/jpomeda/workspaces/MPLABX/atmega328P_freertos/atmega328P_freertos.X/Drivers/uart.c</file>
-            <file>file:/home/jpomeda/workspaces/MPLABX/atmega328P_freertos/atmega328P_freertos.X/Drivers/pins.h</file>
             <file>file:/home/jpomeda/workspaces/MPLABX/atmega328P_freertos/atmega328P_freertos.X/Drivers/system.h</file>
+            <file>file:/home/jpomeda/workspaces/MPLABX/atmega328P_freertos/atmega328P_freertos.X/Drivers/tc0.c</file>
             <file>file:/home/jpomeda/workspaces/MPLABX/atmega328P_freertos/atmega328P_freertos.X/Drivers/system.c</file>
-            <file>file:/home/jpomeda/workspaces/MPLABX/atmega328P_freertos/atmega328P_freertos.X/Makefile</file>
-            <file>file:/home/jpomeda/workspaces/MPLABX/atmega328P_freertos/atmega328P_freertos.X/Drivers/pins.c</file>
             <file>file:/home/jpomeda/workspaces/MPLABX/atmega328P_freertos/atmega328P_freertos.X/Drivers/uart.h</file>
-            <file>file:/home/jpomeda/workspaces/MPLABX/atmega328P_freertos/atmega328P_freertos.X/apptasks.h</file>
+            <file>file:/home/jpomeda/workspaces/MPLABX/atmega328P_freertos/atmega328P_freertos.X/Drivers/tc0.h</file>
+            <file>file:/home/jpomeda/workspaces/MPLABX/atmega328P_freertos/atmega328P_freertos.X/apptasks.c</file>
+            <file>file:/home/jpomeda/workspaces/MPLABX/atmega328P_freertos/atmega328P_freertos.X/Source/include/queue.h</file>
+            <file>file:/home/jpomeda/workspaces/MPLABX/atmega328P_freertos/atmega328P_freertos.X/Source/include/task.h</file>
+            <file>file:/home/jpomeda/workspaces/MPLABX/atmega328P_freertos/atmega328P_freertos.X/Source/include/FreeRTOS.h</file>
+            <file>file:/home/jpomeda/workspaces/MPLABX/atmega328P_freertos/atmega328P_freertos.X/Source/queue.c</file>
+            <file>file:/home/jpomeda/workspaces/MPLABX/atmega328P_freertos/atmega328P_freertos.X/Source/portable/GCC/ATMega328/porthardware.h</file>
+            <file>file:/home/jpomeda/workspaces/MPLABX/atmega328P_freertos/atmega328P_freertos.X/Drivers/pins.c</file>
         </group>
     </open-files>
 </project-private>

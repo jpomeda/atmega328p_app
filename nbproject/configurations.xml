@@ -34,9 +34,9 @@
           </logicalFolder>
         </logicalFolder>
       </logicalFolder>
-      <itemPath>FreeRTOSConfig.h</itemPath>
       <itemPath>apptasks.h</itemPath>
       <itemPath>Drivers/system.h</itemPath>
+      <itemPath>Source/include/FreeRTOSConfig.h</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
@@ -132,16 +132,18 @@
       <AVR-AS>
         <property key="announce-version" value="false"/>
         <property key="include-paths"
-                  value="Drivers;Source/include;Source/portable;Source/portable/GCC;Source/portable/GCC/ATMega328;Source/portable/MemMang"/>
+                  value="Drivers;Source/include;Source/portable;Source/portable/GCC;Source/portable/GCC/ATMega328;Source/portable/MemMang;./"/>
         <property key="suppress-warnings" value="false"/>
+        <appendMe value="-I &quot;FreeRTOSConfig.h&quot;"/>
       </AVR-AS>
       <AVR-AS-PRE>
         <property key="announce-version" value="false"/>
         <property key="include-paths"
-                  value="Drivers;Source/include;Source/portable;Source/portable/GCC;Source/portable/MemMang;Source/portable/GCC/ATMega328"/>
+                  value="Drivers;Source/include;Source/portable;Source/portable/GCC;Source/portable/MemMang;Source/portable/GCC/ATMega328;./"/>
         <property key="preprocessor-macros" value="MCU=atmega328P;CLK=8000000;ADD_EX"/>
         <property key="preprocessor-macros-undefined" value=""/>
         <property key="suppress-warnings" value="false"/>
+        <appendMe value="-I &quot;FreeRTOSConfig.h&quot;"/>
       </AVR-AS-PRE>
       <AVR-CPP>
         <property key="additional-warnings" value="true"/>
@@ -199,7 +201,7 @@
       </AVR-GCC>
       <AVR-Global>
         <property key="common-include-directories"
-                  value="Source/include;Source/portable;Source/portable/GCC;Source/portable/MemMang;Source/portable/GCC/ATMega328;Drivers;../../../../../../usr/lib/avr/include"/>
+                  value="Source/include;Source/portable;Source/portable/GCC;Source/portable/MemMang;Source/portable/GCC/ATMega328;Drivers;/usr/lib/avr/include"/>
         <property key="eep" value="false"/>
         <property key="external-ram-check" value="false"/>
         <property key="hex" value="true"/>
@@ -271,7 +273,7 @@
         <property key="tracecontrol.tracefile" value="defmplabxtrace.log"/>
         <property key="tracecontrol.traceresetonrun" value="false"/>
         <property key="uart0io.output" value="window"/>
-        <property key="uart0io.outputfile" value=""/>
+        <property key="uart0io.outputfile" value="uart_out"/>
         <property key="uart0io.uartioenabled" value="false"/>
         <property key="uart1io.output" value="window"/>
         <property key="uart1io.outputfile" value=""/>
@@ -746,7 +748,7 @@
         <property key="tracecontrol.tracefile" value="defmplabxtrace.log"/>
         <property key="tracecontrol.traceresetonrun" value="false"/>
         <property key="uart0io.output" value="window"/>
-        <property key="uart0io.outputfile" value=""/>
+        <property key="uart0io.outputfile" value="uart_out"/>
         <property key="uart0io.uartioenabled" value="false"/>
         <property key="uart1io.output" value="window"/>
         <property key="uart1io.outputfile" value=""/>

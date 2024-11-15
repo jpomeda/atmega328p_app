@@ -65,36 +65,6 @@ Secciones de salida descartadas
  .text          0x0000000000000000        0x0 build/default/production/Source/croutine.o
  .data          0x0000000000000000        0x0 build/default/production/Source/croutine.o
  .bss           0x0000000000000000        0x0 build/default/production/Source/croutine.o
- .text.xCoRoutineCreate
-                0x0000000000000000       0xf2 build/default/production/Source/croutine.o
- .text.vCoRoutineAddToDelayedList
-                0x0000000000000000       0x86 build/default/production/Source/croutine.o
- .text.vCoRoutineSchedule
-                0x0000000000000000      0x296 build/default/production/Source/croutine.o
- .text.xCoRoutineRemoveFromEventList
-                0x0000000000000000       0x48 build/default/production/Source/croutine.o
- .bss.xPassedTicks
-                0x0000000000000000        0x2 build/default/production/Source/croutine.o
- .bss.xLastTickCount
-                0x0000000000000000        0x2 build/default/production/Source/croutine.o
- .bss.xCoRoutineTickCount
-                0x0000000000000000        0x2 build/default/production/Source/croutine.o
- .bss.uxTopCoRoutineReadyPriority
-                0x0000000000000000        0x1 build/default/production/Source/croutine.o
- .bss.pxCurrentCoRoutine
-                0x0000000000000000        0x2 build/default/production/Source/croutine.o
- .bss.xPendingReadyCoRoutineList
-                0x0000000000000000        0x9 build/default/production/Source/croutine.o
- .bss.pxOverflowDelayedCoRoutineList
-                0x0000000000000000        0x2 build/default/production/Source/croutine.o
- .bss.pxDelayedCoRoutineList
-                0x0000000000000000        0x2 build/default/production/Source/croutine.o
- .bss.xDelayedCoRoutineList2
-                0x0000000000000000        0x9 build/default/production/Source/croutine.o
- .bss.xDelayedCoRoutineList1
-                0x0000000000000000        0x9 build/default/production/Source/croutine.o
- .bss.pxReadyCoRoutineLists
-                0x0000000000000000       0x12 build/default/production/Source/croutine.o
  .comment       0x0000000000000000       0x12 build/default/production/Source/croutine.o
  .text          0x0000000000000000        0x0 build/default/production/Source/event_groups.o
  .data          0x0000000000000000        0x0 build/default/production/Source/event_groups.o
@@ -121,29 +91,37 @@ Secciones de salida descartadas
  .text          0x0000000000000000        0x0 build/default/production/Source/list.o
  .data          0x0000000000000000        0x0 build/default/production/Source/list.o
  .bss           0x0000000000000000        0x0 build/default/production/Source/list.o
+ .text.vListInsertEnd
+                0x0000000000000000       0x40 build/default/production/Source/list.o
  .text          0x0000000000000000        0x0 build/default/production/Source/queue.o
  .data          0x0000000000000000        0x0 build/default/production/Source/queue.o
  .bss           0x0000000000000000        0x0 build/default/production/Source/queue.o
+ .text.prvIsQueueEmpty
+                0x0000000000000000       0x16 build/default/production/Source/queue.o
  .text.prvCopyDataToQueue
-                0x0000000000000000       0x9a build/default/production/Source/queue.o
+                0x0000000000000000       0x98 build/default/production/Source/queue.o
  .text.prvCopyDataFromQueue
                 0x0000000000000000       0x34 build/default/production/Source/queue.o
  .text.prvUnlockQueue
-                0x0000000000000000       0x9c build/default/production/Source/queue.o
+                0x0000000000000000       0x9e build/default/production/Source/queue.o
  .text.xQueueGenericReset
-                0x0000000000000000       0x7c build/default/production/Source/queue.o
+                0x0000000000000000       0xae build/default/production/Source/queue.o
  .text.xQueueGenericCreate
-                0x0000000000000000       0x60 build/default/production/Source/queue.o
+                0x0000000000000000       0x6e build/default/production/Source/queue.o
  .text.xQueueGenericSend
                 0x0000000000000000      0x14c build/default/production/Source/queue.o
  .text.xQueueGenericSendFromISR
-                0x0000000000000000       0x66 build/default/production/Source/queue.o
+                0x0000000000000000       0x78 build/default/production/Source/queue.o
  .text.xQueueGiveFromISR
-                0x0000000000000000       0x54 build/default/production/Source/queue.o
- .text.xQueueGenericReceive
-                0x0000000000000000      0x15e build/default/production/Source/queue.o
+                0x0000000000000000       0x6a build/default/production/Source/queue.o
+ .text.xQueueReceive
+                0x0000000000000000      0x13a build/default/production/Source/queue.o
+ .text.xQueueSemaphoreTake
+                0x0000000000000000      0x122 build/default/production/Source/queue.o
+ .text.xQueuePeek
+                0x0000000000000000      0x13a build/default/production/Source/queue.o
  .text.xQueueReceiveFromISR
-                0x0000000000000000       0x64 build/default/production/Source/queue.o
+                0x0000000000000000       0x78 build/default/production/Source/queue.o
  .text.xQueuePeekFromISR
                 0x0000000000000000       0x2e build/default/production/Source/queue.o
  .text.uxQueueMessagesWaiting
@@ -163,7 +141,7 @@ Secciones de salida descartadas
  .data          0x0000000000000000        0x0 build/default/production/Source/tasks.o
  .bss           0x0000000000000000        0x0 build/default/production/Source/tasks.o
  .text.vTaskDelete
-                0x0000000000000000       0x90 build/default/production/Source/tasks.o
+                0x0000000000000000       0xbe build/default/production/Source/tasks.o
  .text.vTaskEndScheduler
                 0x0000000000000000        0xc build/default/production/Source/tasks.o
  .text.xTaskGetTickCount
@@ -172,34 +150,46 @@ Secciones de salida descartadas
                 0x0000000000000000        0xa build/default/production/Source/tasks.o
  .text.uxTaskGetNumberOfTasks
                 0x0000000000000000        0x6 build/default/production/Source/tasks.o
- .text.vTaskDelayUntil
-                0x0000000000000000       0x8a build/default/production/Source/tasks.o
+ .text.pcTaskGetName
+                0x0000000000000000       0x12 build/default/production/Source/tasks.o
+ .text.xTaskDelayUntil
+                0x0000000000000000       0x8c build/default/production/Source/tasks.o
+ .text.xTaskCatchUpTicks
+                0x0000000000000000       0x32 build/default/production/Source/tasks.o
  .text.vTaskPlaceOnEventList
-                0x0000000000000000       0x3a build/default/production/Source/tasks.o
+                0x0000000000000000       0x24 build/default/production/Source/tasks.o
  .text.vTaskPlaceOnUnorderedEventList
-                0x0000000000000000       0x48 build/default/production/Source/tasks.o
+                0x0000000000000000       0x8c build/default/production/Source/tasks.o
  .text.xTaskRemoveFromEventList
-                0x0000000000000000       0x8e build/default/production/Source/tasks.o
- .text.xTaskRemoveFromUnorderedEventList
-                0x0000000000000000       0x74 build/default/production/Source/tasks.o
+                0x0000000000000000      0x180 build/default/production/Source/tasks.o
+ .text.vTaskRemoveFromUnorderedEventList
+                0x0000000000000000      0x156 build/default/production/Source/tasks.o
  .text.vTaskSetTimeOutState
+                0x0000000000000000       0x20 build/default/production/Source/tasks.o
+ .text.vTaskInternalSetTimeOutState
                 0x0000000000000000       0x16 build/default/production/Source/tasks.o
  .text.xTaskCheckForTimeOut
-                0x0000000000000000       0x64 build/default/production/Source/tasks.o
+                0x0000000000000000       0x62 build/default/production/Source/tasks.o
  .text.vTaskMissedYield
                 0x0000000000000000        0x8 build/default/production/Source/tasks.o
+ .text.xTaskGetCurrentTaskHandle
+                0x0000000000000000        0xa build/default/production/Source/tasks.o
  .text.uxTaskResetEventItemValue
                 0x0000000000000000       0x2e build/default/production/Source/tasks.o
- .text.ulTaskNotifyTake
-                0x0000000000000000       0xd0 build/default/production/Source/tasks.o
- .text.xTaskNotifyWait
-                0x0000000000000000      0x11e build/default/production/Source/tasks.o
- .text.xTaskNotify
-                0x0000000000000000       0xe0 build/default/production/Source/tasks.o
- .text.xTaskNotifyFromISR
+ .text.ulTaskGenericNotifyTake
                 0x0000000000000000      0x10a build/default/production/Source/tasks.o
- .text.vTaskNotifyGiveFromISR
-                0x0000000000000000       0xae build/default/production/Source/tasks.o
+ .text.xTaskGenericNotifyWait
+                0x0000000000000000      0x146 build/default/production/Source/tasks.o
+ .text.xTaskGenericNotify
+                0x0000000000000000      0x204 build/default/production/Source/tasks.o
+ .text.xTaskGenericNotifyFromISR
+                0x0000000000000000      0x258 build/default/production/Source/tasks.o
+ .text.vTaskGenericNotifyGiveFromISR
+                0x0000000000000000      0x19a build/default/production/Source/tasks.o
+ .text.xTaskGenericNotifyStateClear
+                0x0000000000000000       0x30 build/default/production/Source/tasks.o
+ .text.ulTaskGenericNotifyValueClear
+                0x0000000000000000       0x62 build/default/production/Source/tasks.o
  .text          0x0000000000000000        0x0 build/default/production/Source/timers.o
  .data          0x0000000000000000        0x0 build/default/production/Source/timers.o
  .bss           0x0000000000000000        0x0 build/default/production/Source/timers.o
@@ -415,7 +405,7 @@ END GROUP
 .rela.plt
  *(.rela.plt)
 
-.text           0x0000000000000000      0xdc4
+.text           0x0000000000000000      0xf22
  *(.vectors)
  .vectors       0x0000000000000000       0x68 /opt/microchip/mplabx/v6.20/packs/Microchip/ATmega_DFP/3.1.264/gcc/dev/atmega328p/avr5/crtatmega328p.o
                 0x0000000000000000                __vectors
@@ -541,71 +531,68 @@ END GROUP
                 0x000000000000045c        0x6 build/default/production/Source/portable/GCC/ATMega328/port.o
                 0x000000000000045c                __vector_11
  .text.pvPortMalloc
-                0x0000000000000462       0x6c build/default/production/Source/portable/MemMang/heap_1.o
+                0x0000000000000462       0x76 build/default/production/Source/portable/MemMang/heap_1.o
                 0x0000000000000462                pvPortMalloc
  .text.vPortFree
-                0x00000000000004ce        0x2 build/default/production/Source/portable/MemMang/heap_1.o
-                0x00000000000004ce                vPortFree
+                0x00000000000004d8        0x2 build/default/production/Source/portable/MemMang/heap_1.o
+                0x00000000000004d8                vPortFree
  .text.vListInitialise
-                0x00000000000004d0       0x1c build/default/production/Source/list.o
-                0x00000000000004d0                vListInitialise
+                0x00000000000004da       0x1c build/default/production/Source/list.o
+                0x00000000000004da                vListInitialise
  .text.vListInitialiseItem
-                0x00000000000004ec        0x8 build/default/production/Source/list.o
-                0x00000000000004ec                vListInitialiseItem
- .text.vListInsertEnd
-                0x00000000000004f4       0x40 build/default/production/Source/list.o
-                0x00000000000004f4                vListInsertEnd
+                0x00000000000004f6        0x8 build/default/production/Source/list.o
+                0x00000000000004f6                vListInitialiseItem
  .text.vListInsert
-                0x0000000000000534       0x5e build/default/production/Source/list.o
-                0x0000000000000534                vListInsert
+                0x00000000000004fe       0x5e build/default/production/Source/list.o
+                0x00000000000004fe                vListInsert
  .text.uxListRemove
-                0x0000000000000592       0x4e build/default/production/Source/list.o
-                0x0000000000000592                uxListRemove
+                0x000000000000055c       0x50 build/default/production/Source/list.o
+                0x000000000000055c                uxListRemove
  .text.prvResetNextTaskUnblockTime
-                0x00000000000005e0       0x3e build/default/production/Source/tasks.o
+                0x00000000000005ac       0x38 build/default/production/Source/tasks.o
  .text.prvAddCurrentTaskToDelayedList
-                0x000000000000061e       0x6e build/default/production/Source/tasks.o
- .text.xTaskGenericCreate
-                0x000000000000068c      0x210 build/default/production/Source/tasks.o
-                0x000000000000068c                xTaskGenericCreate
- .text.vTaskStartScheduler
-                0x000000000000089c       0x58 build/default/production/Source/tasks.o
-                0x000000000000089c                vTaskStartScheduler
- .text.vTaskSuspendAll
-                0x00000000000008f4        0xc build/default/production/Source/tasks.o
-                0x00000000000008f4                vTaskSuspendAll
- .text.xTaskIncrementTick
-                0x0000000000000900      0x180 build/default/production/Source/tasks.o
-                0x0000000000000900                xTaskIncrementTick
- .text.xTaskResumeAll
-                0x0000000000000a80      0x10c build/default/production/Source/tasks.o
-                0x0000000000000a80                xTaskResumeAll
- .text.vTaskDelay
-                0x0000000000000b8c       0x40 build/default/production/Source/tasks.o
-                0x0000000000000b8c                vTaskDelay
+                0x00000000000005e4       0x88 build/default/production/Source/tasks.o
  .text.prvIdleTask
-                0x0000000000000bcc       0x7e build/default/production/Source/tasks.o
+                0x000000000000066c       0x74 build/default/production/Source/tasks.o
+ .text.xTaskCreate
+                0x00000000000006e0      0x252 build/default/production/Source/tasks.o
+                0x00000000000006e0                xTaskCreate
+ .text.vTaskStartScheduler
+                0x0000000000000932       0x5a build/default/production/Source/tasks.o
+                0x0000000000000932                vTaskStartScheduler
+ .text.vTaskSuspendAll
+                0x000000000000098c        0xc build/default/production/Source/tasks.o
+                0x000000000000098c                vTaskSuspendAll
+ .text.xTaskIncrementTick
+                0x0000000000000998      0x242 build/default/production/Source/tasks.o
+                0x0000000000000998                xTaskIncrementTick
+ .text.xTaskResumeAll
+                0x0000000000000bda      0x1cc build/default/production/Source/tasks.o
+                0x0000000000000bda                xTaskResumeAll
+ .text.vTaskDelay
+                0x0000000000000da6       0x28 build/default/production/Source/tasks.o
+                0x0000000000000da6                vTaskDelay
  .text.vTaskSwitchContext
-                0x0000000000000c4a       0xda build/default/production/Source/tasks.o
-                0x0000000000000c4a                vTaskSwitchContext
+                0x0000000000000dce       0xcc build/default/production/Source/tasks.o
+                0x0000000000000dce                vTaskSwitchContext
  .text.vPINToggleTask
-                0x0000000000000d24       0x16 build/default/production/apptasks.o
-                0x0000000000000d24                vPINToggleTask
+                0x0000000000000e9a       0x16 build/default/production/apptasks.o
+                0x0000000000000e9a                vPINToggleTask
  .text.vUARTTXHelloWorldTask
-                0x0000000000000d3a        0xe build/default/production/apptasks.o
-                0x0000000000000d3a                vUARTTXHelloWorldTask
- .text.main     0x0000000000000d48       0x62 build/default/production/main.o
-                0x0000000000000d48                main
+                0x0000000000000eb0        0xe build/default/production/apptasks.o
+                0x0000000000000eb0                vUARTTXHelloWorldTask
+ .text.main     0x0000000000000ebe       0x4a build/default/production/main.o
+                0x0000000000000ebe                main
  .text.vApplicationIdleHook
-                0x0000000000000daa        0x2 build/default/production/main.o
-                0x0000000000000daa                vApplicationIdleHook
- .text.init     0x0000000000000dac       0x14 build/default/production/Drivers/system.o
-                0x0000000000000dac                init
-                0x0000000000000dc0                . = ALIGN (0x2)
+                0x0000000000000f08        0x2 build/default/production/main.o
+                0x0000000000000f08                vApplicationIdleHook
+ .text.init     0x0000000000000f0a       0x14 build/default/production/Drivers/system.o
+                0x0000000000000f0a                init
+                0x0000000000000f1e                . = ALIGN (0x2)
  *(.fini9)
- .fini9         0x0000000000000dc0        0x0 /usr/lib/gcc/avr/7.3.0/avr5/libgcc.a(_exit.o)
-                0x0000000000000dc0                exit
-                0x0000000000000dc0                _exit
+ .fini9         0x0000000000000f1e        0x0 /usr/lib/gcc/avr/7.3.0/avr5/libgcc.a(_exit.o)
+                0x0000000000000f1e                exit
+                0x0000000000000f1e                _exit
  *(.fini9)
  *(.fini8)
  *(.fini8)
@@ -624,90 +611,96 @@ END GROUP
  *(.fini1)
  *(.fini1)
  *(.fini0)
- .fini0         0x0000000000000dc0        0x4 /usr/lib/gcc/avr/7.3.0/avr5/libgcc.a(_exit.o)
+ .fini0         0x0000000000000f1e        0x4 /usr/lib/gcc/avr/7.3.0/avr5/libgcc.a(_exit.o)
  *(.fini0)
-                0x0000000000000dc4                _etext = .
+                0x0000000000000f22                _etext = .
 
-.data           0x0000000000800100       0x26 dirección de carga 0x0000000000000dc4
+.data           0x0000000000800100       0x26 dirección de carga 0x0000000000000f22
                 0x0000000000800100                PROVIDE (__data_start, .)
  *(.data)
  *(.data*)
  .data.message1
                 0x0000000000800100        0x2 build/default/production/Drivers/uart.o
                 0x0000000000800100                message1
- .data.xNextTaskUnblockTime
-                0x0000000000800102        0x2 build/default/production/Source/tasks.o
+ .data.uxTopUsedPriority
+                0x0000000000800102        0x1 build/default/production/Source/tasks.o
+                0x0000000000800102                uxTopUsedPriority
  *(.gnu.linkonce.d*)
  *(.rodata)
  *(.rodata*)
  .rodata.str1.1
-                0x0000000000800104        0xc build/default/production/Drivers/uart.o
+                0x0000000000800103        0xc build/default/production/Drivers/uart.o
  .rodata.vTaskStartScheduler.str1.1
-                0x0000000000800110        0x5 build/default/production/Source/tasks.o
+                0x000000000080010f        0x5 build/default/production/Source/tasks.o
  .rodata.main.str1.1
-                0x0000000000800115       0x11 build/default/production/main.o
+                0x0000000000800114       0x11 build/default/production/main.o
  *(.gnu.linkonce.r*)
                 0x0000000000800126                . = ALIGN (0x2)
+ *fill*         0x0000000000800125        0x1 
                 0x0000000000800126                _edata = .
                 0x0000000000800126                PROVIDE (__data_end, .)
 
-.bss            0x0000000000800126      0x63b
+.bss            0x0000000000800126      0x640
                 0x0000000000800126                PROVIDE (__bss_start, .)
  *(.bss)
  *(.bss*)
  .bss.tc0_c     0x0000000000800126        0x2 build/default/production/Drivers/tc0.o
- .bss.pucAlignedHeap.1910
+ .bss.pucAlignedHeap.2012
                 0x0000000000800128        0x2 build/default/production/Source/portable/MemMang/heap_1.o
  .bss.xNextFreeByte
                 0x000000000080012a        0x2 build/default/production/Source/portable/MemMang/heap_1.o
  .bss.ucHeap    0x000000000080012c      0x5dc build/default/production/Source/portable/MemMang/heap_1.o
  .bss.uxSchedulerSuspended
                 0x0000000000800708        0x1 build/default/production/Source/tasks.o
+ .bss.xIdleTaskHandle
+                0x0000000000800709        0x2 build/default/production/Source/tasks.o
+ .bss.xNextTaskUnblockTime
+                0x000000000080070b        0x2 build/default/production/Source/tasks.o
  .bss.uxTaskNumber
-                0x0000000000800709        0x1 build/default/production/Source/tasks.o
- .bss.xNumOfOverflows
-                0x000000000080070a        0x1 build/default/production/Source/tasks.o
- .bss.xYieldPending
-                0x000000000080070b        0x1 build/default/production/Source/tasks.o
- .bss.uxPendedTicks
-                0x000000000080070c        0x1 build/default/production/Source/tasks.o
- .bss.xSchedulerRunning
                 0x000000000080070d        0x1 build/default/production/Source/tasks.o
- .bss.uxTopReadyPriority
+ .bss.xNumOfOverflows
                 0x000000000080070e        0x1 build/default/production/Source/tasks.o
- .bss.xTickCount
-                0x000000000080070f        0x2 build/default/production/Source/tasks.o
- .bss.uxCurrentNumberOfTasks
-                0x0000000000800711        0x1 build/default/production/Source/tasks.o
- .bss.uxTasksDeleted
+ .bss.xYieldPending
+                0x000000000080070f        0x1 build/default/production/Source/tasks.o
+ .bss.xPendedTicks
+                0x0000000000800710        0x2 build/default/production/Source/tasks.o
+ .bss.xSchedulerRunning
                 0x0000000000800712        0x1 build/default/production/Source/tasks.o
+ .bss.uxTopReadyPriority
+                0x0000000000800713        0x1 build/default/production/Source/tasks.o
+ .bss.xTickCount
+                0x0000000000800714        0x2 build/default/production/Source/tasks.o
+ .bss.uxCurrentNumberOfTasks
+                0x0000000000800716        0x1 build/default/production/Source/tasks.o
+ .bss.uxDeletedTasksWaitingCleanUp
+                0x0000000000800717        0x1 build/default/production/Source/tasks.o
  .bss.xTasksWaitingTermination
-                0x0000000000800713        0x9 build/default/production/Source/tasks.o
+                0x0000000000800718        0x9 build/default/production/Source/tasks.o
  .bss.xPendingReadyList
-                0x000000000080071c        0x9 build/default/production/Source/tasks.o
+                0x0000000000800721        0x9 build/default/production/Source/tasks.o
  .bss.pxOverflowDelayedTaskList
-                0x0000000000800725        0x2 build/default/production/Source/tasks.o
+                0x000000000080072a        0x2 build/default/production/Source/tasks.o
  .bss.pxDelayedTaskList
-                0x0000000000800727        0x2 build/default/production/Source/tasks.o
+                0x000000000080072c        0x2 build/default/production/Source/tasks.o
  .bss.xDelayedTaskList2
-                0x0000000000800729        0x9 build/default/production/Source/tasks.o
+                0x000000000080072e        0x9 build/default/production/Source/tasks.o
  .bss.xDelayedTaskList1
-                0x0000000000800732        0x9 build/default/production/Source/tasks.o
+                0x0000000000800737        0x9 build/default/production/Source/tasks.o
  .bss.pxReadyTasksLists
-                0x000000000080073b       0x24 build/default/production/Source/tasks.o
+                0x0000000000800740       0x24 build/default/production/Source/tasks.o
  .bss.pxCurrentTCB
-                0x000000000080075f        0x2 build/default/production/Source/tasks.o
-                0x000000000080075f                pxCurrentTCB
+                0x0000000000800764        0x2 build/default/production/Source/tasks.o
+                0x0000000000800764                pxCurrentTCB
  *(COMMON)
-                0x0000000000800761                PROVIDE (__bss_end, .)
-                0x0000000000000dc4                __data_load_start = LOADADDR (.data)
-                0x0000000000000dea                __data_load_end = (__data_load_start + SIZEOF (.data))
+                0x0000000000800766                PROVIDE (__bss_end, .)
+                0x0000000000000f22                __data_load_start = LOADADDR (.data)
+                0x0000000000000f48                __data_load_end = (__data_load_start + SIZEOF (.data))
 
-.noinit         0x0000000000800761        0x0
+.noinit         0x0000000000800766        0x0
                 [!provide]                        PROVIDE (__noinit_start, .)
  *(.noinit*)
                 [!provide]                        PROVIDE (__noinit_end, .)
-                0x0000000000800761                _end = .
+                0x0000000000800766                _end = .
                 [!provide]                        PROVIDE (__heap_start, .)
 
 .eeprom         0x0000000000810000        0x0
