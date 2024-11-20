@@ -11,9 +11,9 @@
 #include "Drivers/uart.h"
 #include "Drivers/tc0.h"
 
-const TickType_t xDelay250ms = 250u;
-const TickType_t xDelay500ms = 500u;
-const TickType_t xDelay1s = 1000u;
+const TickType_t xDelay250ms = 500u;
+const TickType_t xDelay500ms = 1000u;
+const TickType_t xDelay1s = 2000u;
 
 
 void vPINToggleTask(void *pvParms)
