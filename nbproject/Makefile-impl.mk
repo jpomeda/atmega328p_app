@@ -27,7 +27,7 @@ CLEAN_SUBPROJECTS=${CLEAN_SUBPROJECTS_${SUBPROJECTS}}
 PROJECTNAME=atmega328P_freertos.X
 
 # Active Configuration
-DEFAULTCONF=default
+DEFAULTCONF=additional_ex
 CONF=${DEFAULTCONF}
 
 # All Configurations
